@@ -1,0 +1,449 @@
+.container {
+    overflow: hidden;
+}
+
+.wrap-header {
+    position: relative;
+    top: 0px;
+    width: 100%;
+    z-index: 1049;
+    overflow: hidden;
+
+}
+
+.utilityHeaderWrap {
+    max-width: 100%;
+    height: 50px;
+    background-color: var(--header-color);
+    display: flex;
+    align-items: center;
+}
+
+.utilityHeader {
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.utilityLocation {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.utilityLocation-item {
+    display: flex;
+    color: #fff;
+    cursor: pointer;
+    height: 36px;
+    border-color: transparent;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 8px 12px 8px 8px;
+    border-radius: 8px;
+    margin: 0px 4px;
+    font-size: 12px;
+}
+
+.utilityLocation-item:hover {
+    background-color: rgb(170, 0, 0);
+}
+
+.utilityLocation-item i {
+    padding: 2px;
+}
+
+.utilityLocation-item p {
+    margin-left: 8px;
+}
+
+.utilityLink {
+    display: flex;
+    font-size: 12px;
+    align-items: center;
+}
+
+.utilityLink a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 32px;
+}
+
+.utilityLink a:hover {
+    text-decoration: underline;
+}
+
+.headerPrimaryWrap {
+    position: fixed;
+    max-width: 100%;
+    z-index: 10;
+    box-shadow: inset 0px -1px 2px rgba(0, 0, 0, 0.4);
+    left: 0;
+    right: 0;
+    background-color: #fff;
+}
+
+.headerPrimary {
+    width: 1200px;
+    margin: 0 auto;
+    height: 80px;
+    z-index: 10;
+}
+
+.headerPrimaryContainer {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.headerLogo {
+    margin: 2px;
+}
+
+.headerCategory,
+.headerDeals,
+.headerNews,
+.headerPD {
+    cursor: pointer;
+    height: 44px;
+    line-height: 44px;
+    margin-left: 8px;
+    padding: 0 16px;
+    border: 1px solid transparent;
+}
+
+.icon-down.fa-solid.fa-chevron-down {
+    font-size: 12px;
+    margin-left: 8px;
+    color: #fff;
+}
+
+.headerCategory:hover,
+.headerDeals:hover,
+.headerNews:hover,
+.headerPD:hover,
+.headerSignIn:hover,
+.headerCart:hover {
+    background: rgb(247, 247, 247);
+    border-radius: 8px;
+}
+
+.headerCategory:hover .icon-down.fa-solid.fa-chevron-down,
+.headerDeals:hover .icon-down.fa-solid.fa-chevron-down,
+.headerNews:hover .icon-down.fa-solid.fa-chevron-down,
+.headerPD:hover .icon-down.fa-solid.fa-chevron-down,
+.headerSignIn:hover .icon-down.fa-solid.fa-chevron-down {
+    color: #000;
+}
+
+.headerSearch {
+    display: flex;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1 1 auto;
+    -webkit-box-align: center;
+    margin: 0px 24px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+}
+
+.inputSearch {
+    display: flex;
+    height: 44px;
+    margin: 0px;
+    padding: 14px;
+    position: relative;
+    width: 100%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 16px;
+}
+
+.icon-microphone,
+.icon-search {
+    cursor: pointer;
+    color: #888787;
+    width: 28px;
+    font-size: 22px;
+    margin-right: 12px;
+}
+
+.headerSignIn {
+    display: flex;
+    margin-right: 16px;
+    padding-right: 24px;
+    height: 44px;
+    line-height: 44px;
+    cursor: pointer;
+    align-items: center;
+}
+
+.avatar-user {
+    display: flex;
+    width: 44px;
+    height: 44px;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.headerSignIn .signIn {
+    color: #000;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.headerCart {
+    flex: 0 0 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-cart {
+    color: #000;
+    font-size: 26px;
+}
+
+.category,
+.deals,
+.news,
+.pickup-delivery {
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+}
+
+.headerDropDown {
+    position: relative;
+}
+
+.dropDownCategory {
+    position: absolute;
+    left: 58px;
+    overflow: hidden;
+    width: 320px;
+    max-height: 420px;
+    background-color: #fff;
+    padding-left: 17px;
+    padding-right: 36px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    display: none;
+}
+
+.dropDownCategory h3 {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    cursor: text;
+    height: 64px;
+}
+
+.dropDownCategory ul {}
+
+.dropDownItem {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    height: 44px;
+    border-top: 1px solid #ccc;
+    font-size: 18px;
+    position: relative;
+}
+
+.dropDownItem:hover {
+    text-decoration: underline;
+}
+
+.dropDownItem a {
+    text-decoration: none;
+    color: #333333;
+}
+
+.dropDownItem a::after {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.dropDownDeals {
+    position: absolute;
+    left: 205px;
+    overflow: hidden;
+    width: 320px;
+    max-height: 420px;
+    background-color: #fff;
+    padding-left: 17px;
+    padding-right: 36px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    display: none;
+}
+
+.dropDownDeals .dropDownItem:first-child,
+.dropDownNews .dropDownItem:first-child,
+.dropDownPD .dropDownItem:first-child {
+    border-top: none;
+}
+
+.dropDownNews {
+    position: absolute;
+    left: 311px;
+    overflow: hidden;
+    width: 320px;
+    max-height: 420px;
+    background-color: #fff;
+    padding-left: 17px;
+    padding-right: 36px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    display: none;
+}
+
+.dropDownPD {
+    position: absolute;
+    left: 456px;
+    overflow: hidden;
+    width: 320px;
+    max-height: 420px;
+    background-color: #fff;
+    padding-left: 17px;
+    padding-right: 36px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    display: none;
+}
+
+
+/* ============================================================================ */
+.body-container {
+    padding-top: 80px;
+}
+
+.bodyContainerWrap {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bannerContainer {
+    height: auto;
+    width: 100%;
+}
+
+.bannerContainer-item {
+    display: inline-block;
+    height: 450px;
+    position: relative;
+}
+
+.bannerContainer-item:hover .bannerTitle h2,
+.bannerContainer-item:hover .bannerTitle p,
+.bannerContainer-item:hover .bannerTitle button {
+    text-decoration: underline;
+}
+
+.bannerImg {
+    width: 1200px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bannerTitle {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #000;
+    width: 360px;
+    justify-content: center;
+}
+
+.bannerTitle h2 {
+    height: 110px;
+    font-size: 56px;
+    line-height: 1;
+    margin-bottom: 0.3em;
+    width: 100%;
+}
+
+.bannerTitle p {
+    line-height: 1.2;
+    font-size: 24px;
+    height: 55px;
+    margin-bottom: 0.3em;
+    width: 100%;
+}
+
+.bannerTitle button {
+    margin: 16px auto;
+    height: 44px;
+    width: 172px;
+    border-radius: 4px;
+    outline: none;
+    font-size: 18.75px;
+    background-color: #aa0000;
+    border: 1px solid #aa0000;
+    color: #fff;
+    cursor: pointer;
+}
+
+.bannerDetails {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -3px;
+    background-color: #f6bd17;
+    padding: 14px 32px 0 32px;
+}
+
+.bannerDetails-item {
+    position: relative;
+    max-width: 25%;
+    flex: 0 0 25%;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.bannerDetails-img-sale,
+.bannerDetails-img-sale1 {
+    position: absolute;
+    top: 15%;
+    left: 20%;
+    line-height: 1;
+}
+
+.bannerDetails-img-sale {
+    color: #aa0000;
+}
+
+.bannerDetails-img-sale1 {
+    color: #000;
+}
+
+.bannerDetails-item-img img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.bannerDetails-img-sale p,
+.bannerDetails-img-sale1 p {
+    font-size: 20px;
+}
+
+.bannerDetails-img-sale h2,
+.bannerDetails-img-sale1 h2 {
+    font-size: 40px;
+}
