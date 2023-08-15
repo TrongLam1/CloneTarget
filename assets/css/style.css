@@ -5,17 +5,20 @@
 .wrap-header {
     position: relative;
     top: 0px;
-    z-index: 1049;
+    z-index: 1;
     overflow: hidden;
+    background-color: #fff;
+    height: 130px;
+    box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.04),
+        0px 1px 2px rgba(0, 0, 0, 0.04),
+        0px 3px 4px rgba(0, 0, 0, 0.04);
 }
 
 .utilityHeaderWrap {
-    max-width: 1350px;
     height: 50px;
     background-color: var(--header-color);
     display: flex;
     align-items: center;
-    margin: 0 auto;
 }
 
 .utilityHeader {
@@ -74,13 +77,14 @@
 
 .headerPrimaryWrap {
     position: fixed;
-    max-width: 1350px;
-    margin: 0 auto;
     z-index: 10;
-    box-shadow: inset 0px -1px 2px rgba(0, 0, 0, 0.4);
     left: 0;
     right: 0;
     background-color: #fff;
+}
+
+.headerPrimaryWrap.active {
+    box-shadow: none;
 }
 
 .headerPrimary {
@@ -94,6 +98,7 @@
     display: flex;
     align-items: center;
     height: 100%;
+    width: 1300px;
     justify-content: space-between;
 }
 
@@ -101,10 +106,10 @@
     margin: 2px;
 }
 
-.headerCategory,
-.headerDeals,
-.headerNews,
-.headerPD {
+#headerCategory,
+#headerDeals,
+#headerNews,
+#headerPD {
     cursor: pointer;
     height: 44px;
     line-height: 44px;
@@ -119,25 +124,25 @@
     color: #fff;
 }
 
-.headerCategory:hover,
-.headerDeals:hover,
-.headerNews:hover,
-.headerPD:hover,
+#headerCategory:hover,
+#headerDeals:hover,
+#headerNews:hover,
+#headerPD:hover,
 .headerSignIn:hover,
 .headerCart:hover {
     background: rgb(247, 247, 247);
     border-radius: 8px;
 }
 
-.headerCategory:hover .icon-down.fa-solid.fa-chevron-down,
-.headerDeals:hover .icon-down.fa-solid.fa-chevron-down,
-.headerNews:hover .icon-down.fa-solid.fa-chevron-down,
-.headerPD:hover .icon-down.fa-solid.fa-chevron-down,
+#headerCategory:hover .icon-down.fa-solid.fa-chevron-down,
+#headerDeals:hover .icon-down.fa-solid.fa-chevron-down,
+#headerNews:hover .icon-down.fa-solid.fa-chevron-down,
+#headerPD:hover .icon-down.fa-solid.fa-chevron-down,
 .headerSignIn:hover .icon-down.fa-solid.fa-chevron-down {
     color: #000;
 }
 
-.headerSearch {
+#headerSearch {
     display: flex;
     -webkit-box-pack: end;
     justify-content: flex-end;
@@ -221,12 +226,22 @@
 
 .headerDropDown {
     position: relative;
+    color: #333;
+}
+
+.headerDropDownItem {
+    display: none;
+}
+
+.headerDropDownItem.active {
+    display: block;
+    animation: topToDown ease .3s;
 }
 
 .dropDownCategory {
     position: absolute;
-    left: 58px;
-    overflow: hidden;
+    left: 66px;
+    overflow: auto;
     width: 320px;
     max-height: 420px;
     background-color: #fff;
@@ -234,18 +249,42 @@
     padding-right: 36px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-    display: none;
+}
+
+/* Customize the scrollbar track */
+.dropDownCategory::-webkit-scrollbar-track {
+    background-color: transparent;
+    /* Set the background color of the scrollbar track */
+}
+
+/* Customize the scrollbar thumb */
+.dropDownCategory::-webkit-scrollbar-thumb {
+    background-color: #cccccc;
+    /* Set the color of the scrollbar thumb */
+    border-radius: 20px;
+    /* Set the border-radius to create a rounded thumb */
+    max-height: 40px;
+    /* Set the max height of the scrollbar thumb */
+}
+
+/* Hide the scrollbar when not hovered */
+.dropDownCategory::-webkit-scrollbar {
+    width: 10px;
+    /* Set the width of the scrollbar */
+}
+
+.dropDownCategory:hover::-webkit-scrollbar {
+    width: 10px;
+    /* Set the width of the scrollbar */
 }
 
 .dropDownCategory h3 {
     display: flex;
     align-items: center;
-    font-size: 22px;
+    font-size: 19px;
     cursor: text;
     height: 64px;
 }
-
-.dropDownCategory ul {}
 
 .dropDownItem {
     display: flex;
@@ -253,7 +292,7 @@
     list-style: none;
     height: 44px;
     border-top: 1px solid #ccc;
-    font-size: 18px;
+    font-size: 16px;
     position: relative;
 }
 
@@ -278,7 +317,7 @@
 
 .dropDownDeals {
     position: absolute;
-    left: 205px;
+    left: 211px;
     overflow: hidden;
     width: 320px;
     max-height: 420px;
@@ -287,7 +326,6 @@
     padding-right: 36px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-    display: none;
 }
 
 .dropDownDeals .dropDownItem:first-child,
@@ -298,7 +336,7 @@
 
 .dropDownNews {
     position: absolute;
-    left: 311px;
+    left: 317px;
     overflow: hidden;
     width: 320px;
     max-height: 420px;
@@ -307,12 +345,11 @@
     padding-right: 36px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-    display: none;
 }
 
 .dropDownPD {
     position: absolute;
-    left: 456px;
+    left: 464px;
     overflow: hidden;
     width: 320px;
     max-height: 420px;
@@ -321,14 +358,10 @@
     padding-right: 36px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-    display: none;
 }
-
 
 /* ============================================================================ */
-.body-container {
-    padding-top: 80px;
-}
+.body-container {}
 
 .bodyContainerWrap {
     width: 100%;
@@ -847,6 +880,7 @@
 .newContainerItem {
     color: #333;
     text-decoration: none;
+    max-width: 100%;
 }
 
 .newContainerItem:hover {
@@ -862,8 +896,8 @@
 }
 
 .newItem-img {
-    width: 536px;
-    height: 268px;
+    max-width: 536px;
+    max-height: 268px;
     object-fit: contain;
 }
 
@@ -1410,6 +1444,212 @@
     color: #d6d6d6;
 }
 
+/* ============================ Modal drop ============================ */
+.modalHeader {
+    padding-top: 130px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding-left: 28px;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+}
+
+.modalHeader.active {
+    display: block;
+}
+
+.dropDownSearch {
+    position: absolute;
+    background-color: #fff;
+    max-width: 489px;
+    max-height: 442px;
+    border: 8px;
+    overflow: hidden;
+    left: 674px;
+    padding-bottom: 24px;
+    border-radius: 10px;
+    top: -10px;
+}
+
+.searchRecent h3,
+.searchTrending h3 {
+    font-size: 19px;
+    padding-left: 16px;
+    padding-top: 32px;
+    line-height: 1;
+}
+
+.searchSlides {
+    width: 100%;
+    padding: 12px 16px;
+    height: 120px;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+.searchSlideItem {
+    margin-right: 8px;
+}
+
+.searchSlide {
+    background-color: #d6d6d6;
+    height: 100px;
+    width: 100px;
+    border-radius: 4px;
+    animation-name: flicker;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.searchTrending ul {
+    max-height: 240px;
+}
+
+.searchTrending ul li {
+    padding: 12px 16px 12px 0;
+    border-bottom: 1px solid #d6d6d6;
+    width: 93%;
+    margin: 0 auto;
+    list-style: none;
+}
+
+.searchTrending ul li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.25;
+}
+
+.searchTrending ul li a:hover {
+    text-decoration: underline;
+}
+
+.searchTrending ul li a i {
+    padding-right: 12px;
+}
+
+/* ============================ Modal sign in ================================ */
+.modalSignIn {
+    position: fixed;
+    inset: 0px;
+    background: #333333cc;
+    backdrop-filter: blur(4px);
+    z-index: 2;
+    overflow: hidden;
+    display: none;
+}
+
+.modalSignIn.active {
+    display: block;
+}
+
+.signInContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 360px;
+    background-color: #fff;
+    float: right;
+    overflow: auto;
+    animation: leftToRight ease .5s;
+}
+
+.signInHeading {
+    display: flex;
+    -webkit-box-align: center;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+    min-height: 64px;
+    padding-right: 20px;
+    border-bottom: 1px solid #d6d6d6;
+}
+
+.signInHeading h2 {
+    font-size: 23px;
+    color: #333;
+    line-height: 1;
+}
+
+.signInTitle {
+    padding: 16px 0 16px 16px;
+}
+
+.signInHeading button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    background-color: #f7f7f7;
+    border-radius: 100%;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border: none;
+    font-size: 32px;
+}
+
+.signInHeading button:hover {
+    background-color: #d6d6d6;
+}
+
+.signInWrap {}
+
+.signInItems {}
+
+.signInItems li {
+    position: relative;
+    display: flex;
+    list-style: none;
+    padding: 12px 16px;
+    height: 50px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.signInItems li::before {
+    content: "";
+    position: absolute;
+    border-bottom: 1px solid #d6d6d6;
+    outline: 0px;
+    top: -1px;
+    width: 90%;
+}
+
+.signInItems li:last-child {
+    margin-bottom: 80px;
+}
+
+.signInItems li a {
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.signInItems li a:hover {
+    text-decoration: underline;
+}
+
+.signInItems li a span {
+    color: #333;
+    font-size: 18px;
+}
+
+.signInItems li a p {
+    color: #666;
+    font-size: 16px;
+}
+
 @keyframes flicker {
     0% {
         opacity: 1;
@@ -1421,5 +1661,39 @@
 
     100% {
         opacity: 1;
+    }
+}
+
+@keyframes topToDown {
+    from {
+        transform: translateY(-240px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes leftToRight {
+    from {
+        opacity: 0;
+        transform: translateX(370px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes rightToLeft {
+    from {
+        opacity: 0;
+        transform: translateX(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(370px);
     }
 }
